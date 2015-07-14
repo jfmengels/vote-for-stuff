@@ -3,6 +3,7 @@
 import React from 'react';
 	
 import PollAnswer from './pollAnswer';
+import Stats from './stats';
 
 export default class Poll extends React.Component {
 	constructor(props) {
@@ -14,6 +15,7 @@ export default class Poll extends React.Component {
 			<PollAnswer
 				answer={answer}
 				key={index}
+				index={index}
 				pollIndex={this.props.index}
 			/>
 		);
@@ -23,6 +25,7 @@ export default class Poll extends React.Component {
 				<div className="answers">
 					{answers}
 				</div>
+				<Stats poll={this.props.poll} />
 			</div>
 		);
 	}

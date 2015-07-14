@@ -19,11 +19,11 @@ export default class App extends React.Component {
 	}
 
     componentDidMount() {
-        pollStore.addChangeListener(this._onChange);
+        pollStore.addChangeListener(this._onChange.bind(this));
     }
 
     componentWillUnmount() {
-        pollStore.removeChangeListener(this._onChange);
+        pollStore.removeChangeListener(this._onChange.bind(this));
     }
 
     _onChange() {

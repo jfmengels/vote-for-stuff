@@ -3,7 +3,7 @@
 import events from 'events';
 
 import dispatcher from '../dispatcher/index';
-import appConstants from '../constants/appConstants';
+import AppConstants from '../constants/appConstants';
 
 const polls = [{
     "question": "What side are you on, good or evil?",
@@ -30,17 +30,22 @@ const CHANGE_EVENT = 'change';
 class PollStore extends events.EventEmitter {
 	constructor(props) {
 		super(props);
-		this.dispatcherIndex = dispatcher.register(this.dispatch);
+		this.dispatcherIndex = dispatcher.register(this.dispatch.bind(this));
 	}
 
 	dispatch(payload) {
-		console.log(payload);
 		const {actionType, pollIndex, answerIndex} = payload.action;
 
 		switch(actionType) {
-			case appConstants.POLL_ANSWER_VOTE:
-				polls[pollIndex][answerIndex]++;
-				emitChange();
+			case AppConstants.POLL_ANSWER_VOTE:
+				const itemExists = polls &&
+					polls[pollIndex] &&
+					polls[pollIndex].answers &&
+					polls[pollIndex].answers[answerIndex];
+				if (itemExists) {
+					polls[pollIndex].answers[answerIndex].count++;
+					this.emitChange();
+				}
 				break;
 		}
 		return true;
@@ -48,10 +53,6 @@ class PollStore extends events.EventEmitter {
 
 	getAll() {
 		return polls;
-	}
-
-	vote(id) {
-		console.log(`Voting for item ${id}`);
 	}
 
 	emitChange() {

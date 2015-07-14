@@ -1,0 +1,33 @@
+{
+  "name": "vote-for-stuff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "jspm install",
+    "start": "browser-sync start --server --files 'css/*.css, app/**/*, *.html'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeroen Engels <jfm.engels@gmail.com>",
+  "license": "ISC",
+  "jspm": {
+    "directories": {},
+    "dependencies": {
+      "flux": "npm:flux@^2.0.3",
+      "react": "npm:react@^0.14.0-beta1",
+      "react-dom": "npm:react-dom@0.14.0-beta1",
+      "react-flux": "npm:react-flux@^1.0.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  },
+  "dependencies": {
+    "jspm": "^0.15.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.7.13"
+  }
+}

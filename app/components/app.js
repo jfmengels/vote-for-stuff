@@ -34,7 +34,6 @@ export default class App extends React.Component {
 		const pollList = this.state.polls.map((poll, index) => (
 			<Poll poll={poll} key={index} index={index} />
 		));
-		console.log(pollList);
 		return (
 			<div>
 				<h2>Polls</h2>

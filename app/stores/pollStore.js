@@ -1,6 +1,6 @@
 'use strict';
 
-// import {EventEmitter} from 'events';
+import events from 'events';
 
 import dispatcher from '../dispatcher/index';
 import appConstants from '../constants/appConstants';
@@ -27,10 +27,9 @@ const polls = [{
 
 const CHANGE_EVENT = 'change';
 
-class PollStore {
-// class PollStore extends EventEmitter {
-	constructor() {
-		// super();
+class PollStore extends events.EventEmitter {
+	constructor(props) {
+		super(props);
 		this.dispatcherIndex = dispatcher.register(this.dispatch);
 	}
 
@@ -66,10 +65,6 @@ class PollStore {
 	removeChangeListener(cb) {
 		this.removeListener(CHANGE_EVENT, cb);
 	}
-
-	on() {}
-	emit() {}
-	removeListener() {}
 }
 
 export default new PollStore();

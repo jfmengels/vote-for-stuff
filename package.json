@@ -13,6 +13,7 @@
   "jspm": {
     "directories": {},
     "dependencies": {
+      "events": "github:jspm/nodelibs-events@^0.1.1",
       "flux": "npm:flux@^2.0.3",
       "react": "npm:react@^0.14.0-beta1",
       "react-dom": "npm:react-dom@0.14.0-beta1",

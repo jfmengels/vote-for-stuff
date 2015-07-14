@@ -7,7 +7,6 @@ import PollAnswer from './pollAnswer';
 export default class Poll extends React.Component {
 	constructor(props) {
 		super(props);
-		console.log(this.props.poll);
 	}
 
 	render() {
@@ -18,7 +17,6 @@ export default class Poll extends React.Component {
 				pollIndex={this.props.index}
 			/>
 		);
-		console.log('answers', answers);
 		return (
 			<div>
 				<span className="poll_question">{this.props.poll.question}</span>

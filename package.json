@@ -1,15 +1,13 @@
 {
   "name": "vote-for-stuff",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple website to vote for things",
   "main": "index.js",
   "scripts": {
     "postinstall": "jspm install",
     "start": "browser-sync start --server --files 'css/*.css, app/**/*, *.html'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jeroen Engels <jfm.engels@gmail.com>",
-  "license": "ISC",
   "jspm": {
     "directories": {},
     "dependencies": {
@@ -30,5 +28,11 @@
   },
   "devDependencies": {
     "browser-sync": "^2.7.13"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfmengels/vote-for-stuff.git"
+  },
+  "author": "Jeroen Engels <jfm.engels@gmail.com>",
+  "license": "ISC"
 }
